@@ -18,8 +18,8 @@ def route():
         f.write(replace_entities(str(request.url)) + "\n")
 
     with open("key.log", "a") as f:
-        if "c" in request.get:
-            keys = replace_entities(request.get['c'])
+        if "c" in request.args:
+            keys = replace_entities(request.args.get('c'))
             f.write(keys + '\n')
 
     return "WARNING: This site exists to demonstrate a 'capture server' for a penetration tester. Every GET request you send to it will be logged and recorded. Old logs will be deleted after some time, but information you send here is not safe. Use this site for educational purposes only! I am not responsible for any damages caused, as this site will be taken down as frequently as possible to reduce damages."
