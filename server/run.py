@@ -1,4 +1,4 @@
-"""Run a server that takes all GET and POST requests and dumps them."""
+"""Run a server that takes all GET requests and dumps them."""
 
 from flask import Flask, request, send_from_directory
 
@@ -13,7 +13,7 @@ def route():
     with open("cap.log", "a") as f:
         f.write(str(request.url) + "\n")
 
-    return request.url
+    return "WARNING: This site exists to demonstrate a 'capture server' for a penetration tester. Every GET request you send to it will be logged and recorded. Old logs will be deleted after some time, but information you send here is not safe. Use this site for educational purposes only! I am not responsible for any damages caused, as this site will be taken down as frequently as possible to reduce damages."
 
 
 # @app.route('/<path:path>')
