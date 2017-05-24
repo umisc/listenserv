@@ -2,6 +2,7 @@
 
 from flask import Flask, request, send_from_directory
 
+import html
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -14,7 +15,7 @@ def route():
     # Print, log, and return.
     print(request.url)
     with open("cap.log", "a") as f:
-        f.write(str(request.url) + "\n")
+        f.write(html.unescape(str(request.url)) + "\n")
 
     return "WARNING: This site exists to demonstrate a 'capture server' for a penetration tester. Every GET request you send to it will be logged and recorded. Old logs will be deleted after some time, but information you send here is not safe. Use this site for educational purposes only! I am not responsible for any damages caused, as this site will be taken down as frequently as possible to reduce damages."
 
