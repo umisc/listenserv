@@ -23,7 +23,7 @@ Then:
 $ sudo python run.py
 ```
 
-Server will be running on localhost:80.
+Server will be running on localhost:80. Ensure that before running this web app that you do not have anything else listening on port 80.
 
 Considerations
 --------------
