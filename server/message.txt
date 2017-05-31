@@ -1,0 +1,5 @@
+WARNING!
+
+This site exists to demonstrate a 'capture server' for a penetration tester. Every GET request you send to it will be logged and recorded. To reiterate, information you send here is not safe!
+
+Use this site for educational purposes only. I am not responsible for any damages caused in the operation of this website, nor am I responsible for any other running instances or forks with or without this message kept with them.
